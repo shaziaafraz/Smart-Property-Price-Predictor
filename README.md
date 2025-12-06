@@ -75,6 +75,7 @@ Currently, Random Forest models are active in the interface.
 ```
 smart-property-price-predictor/
 ├── app.py                    # Main Streamlit application
+├── requirements.txt          # Python dependencies
 ├── cleaning.ipynb            # Data cleaning notebook
 ├── EDA_data.ipynb            # Exploratory data analysis
 ├── model.ipynb               # Model training notebook
