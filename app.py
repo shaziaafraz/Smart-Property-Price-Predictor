@@ -2,10 +2,14 @@ import streamlit as st
 import pandas as pd
 import joblib
 import numpy as np
+import os
 
 # Load Models
 @st.cache_resource
 def load_models():
+    if not os.path.exists('random_forest_reg.pkl') or not os.path.exists('random_forest_clf.pkl'):
+        st.error("Model files not found. Please ensure 'random_forest_reg.pkl' and 'random_forest_clf.pkl' are uploaded to the project directory.")
+        st.stop()
     reg_model = joblib.load('random_forest_reg.pkl')
     clf_model = joblib.load('random_forest_clf.pkl')
     return reg_model, clf_model
